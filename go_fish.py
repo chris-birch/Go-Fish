@@ -4,7 +4,7 @@
 import subprocess as sp
 
 # Function to clear the screen
-def clearScreen():	
+def clearScreen():
 	sp.call('clear', shell=True)
 
 # How to play function
@@ -43,7 +43,7 @@ while viewMenu == True:
 
 	# Get a choice
 	while choice != 'q':
-		
+
 
 		# Ask for the choice
 		choice = raw_input("Option: ")
@@ -51,7 +51,7 @@ while viewMenu == True:
 		# Respond to the users choice
 		if choice == "1":
 			print("now starting a new gmae")
-		
+
 		elif choice == "2":
 			howToPlay()
 			break
