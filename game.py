@@ -15,6 +15,11 @@ playerHands = {}
 
 sp.call('clear', shell=True)
 
+## TESTING ONLY ##
+numberOfPlayers = 4
+playerTypes = ['computer', 'human', 'computer', 'human']
+########################################################
+
 def numberOfPlayersInGame():
     AllOptionsChosen = False
 
@@ -66,17 +71,19 @@ def setPlayerTypes():
         print("\n # Please choose how many players are playing first. #")
 
 def createCards():
-    # Create the cards
+    # Clear current deck and generate new ones
     global deck
+    deck = []
     suits = ['h', 'd', 'c', 's']
     ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
     for suitId, suitVal in enumerate(suits):
         for rankId, rankVal in enumerate(ranks):
-            deck.append(suitVal+rankVal)
+            deck.append(rankVal+suitVal)
 
 def dealCards():
 
+    # create a new list of cards
     createCards()
     global deck
     global playerHands
@@ -99,11 +106,32 @@ def dealCards():
         playerHands['player' + str(id)] = randomFiveCards
 
 def goFish():
-    # create a new list of cards
-    createCards()
+    clearScreen()
+    # create and assign all players 5 random cards each
 
-    # assign all players 5 random cards each
     dealCards()
+    playingGame = True
+
+    while playingGame == True:
+
+        # each player gets a go
+        for id, player in enumerate(playerTypes):
+
+            currentTurn = True
+
+            while currentTurn == True:
+                #Print the players hand
+
+                myHand = "You currently have"
+                for cards in playerHands['player'+str(id)]:
+                    myHand = myHand + cards
+
+                    print myHand
+
+                    currentTurn = False
+
+            playingGame = False
+
 
 
 # Choose game options
@@ -139,11 +167,12 @@ while viewMenu == True:
             break
 
         elif choice == "3":
-            dealCards()
+            goFish()
 
         ### secret option to view teh current players hands ###
         elif choice == "4":
             print(playerHands)
+        #######################################################
 
         elif choice == "q":
             # Exit out of loop
