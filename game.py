@@ -12,6 +12,7 @@ numberOfPlayers = 0
 playerTypes = []
 deck = []
 playerHands = {}
+important_veriable = "I can be removed if needed"
 
 sp.call('clear', shell=True)
 
