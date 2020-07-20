@@ -1,4 +1,4 @@
-# The main game...
+# This is the main game and other things are imported in from other files
 
 import subprocess as sp
 import random
@@ -12,6 +12,7 @@ numberOfPlayers = 0
 playerTypes = []
 deck = []
 playerHands = {}
+important_veriable = "I can be removed if needed"
 
 sp.call('clear', shell=True)
 
