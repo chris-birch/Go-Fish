@@ -1,4 +1,4 @@
-# The main game...
+# This is the main game and other things are imported in from other files
 
 import subprocess as sp
 import random
