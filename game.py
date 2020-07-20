@@ -15,11 +15,6 @@ playerHands = {}
 
 sp.call('clear', shell=True)
 
-## TESTING ONLY ##
-numberOfPlayers = 4
-playerTypes = ['computer', 'human', 'computer', 'human']
-########################################################
-
 def numberOfPlayersInGame():
     AllOptionsChosen = False
 
